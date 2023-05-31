@@ -1,0 +1,35 @@
+    <script src="https://kit.fontawesome.com/6d20788c52.js" crossorigin="anonymous"></script>
+
+<style>
+h2, p{
+    margin: 10px;
+    font-sixe: 1.5em;
+    width: 45%;
+    text-align: center;
+}
+.flex{
+    display: flex;
+    width: 80vw;
+    margin-left: 10vw;
+    background-color: #0066ff;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.data{
+    background-color:  #f1f6ff;
+    color: #000;
+}
+</style>
+
+<div class="flex">
+<h2>Name</h2>
+<h2>Price</h2>
+
+</div>
+{% for product in products %}
+<div class="flex data">
+    <h2>{{ product.name }}</h2>
+    <h2>{{ product.price }}</h2>
+    <a href={{path('app_item', {'id':product.id})}}><i class="fa-solid fa-eye"></i></a>
+    </div>
+{% endfor %}
